@@ -1,0 +1,34 @@
+export const SITE_URL = "https://bestbuyunder500.com";
+
+export const articleRoutes = [
+  {
+    path: "/best-gaming-laptop-under-500/",
+    title: "Best Gaming Laptop Under $500 in 2026",
+    description: "Compare the best gaming laptop under $500 picks with specs, pros, cons, quick picks, and buying tips.",
+    category: "Tech & Outdoors"
+  },
+  {
+    path: "/best-gaming-headsets-for-under-500/",
+    title: "Best Gaming Headsets Under $500 in 2026",
+    description: "Compare the best gaming headsets under $500 with wireless, noise-canceling, audiophile, and developer-friendly picks.",
+    category: "Tech & Outdoors"
+  },
+  {
+    path: "/refrigerator-sale-under-500/",
+    title: "Refrigerator Sale Under $500 in 2026",
+    description: "Compare refrigerator sale under $500 picks for apartments, dorms, offices, and compact kitchens.",
+    category: "Home & Living"
+  }
+];
+
+export const staticRoutes = [
+  { path: "/", title: "BestBuyUnder500" },
+  { path: "/about/", title: "About BestBuyUnder500" },
+  { path: "/contact/", title: "Contact BestBuyUnder500" },
+  { path: "/write-for-us/", title: "Write for Us" },
+  { path: "/privacy-policy/", title: "Privacy Policy" },
+  { path: "/terms-and-conditions/", title: "Terms and Conditions" },
+  { path: "/affiliate-disclosure/", title: "Affiliate Disclosure" }
+];
+
+export const allRoutes = [...staticRoutes, ...articleRoutes];
