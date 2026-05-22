@@ -159,13 +159,12 @@ let products = rows
     const col = (name) => row[h[name.toLowerCase()]];
     const title = clean(col("Title"));
     const brand = brandFrom(col("Brand"), title);
-    const { image, images } = parseProductImages(row, headerMap, clean);
+    const { image } = parseProductImages(row, headerMap, clean);
     const product = {
       id: `watch-${index + 1}`,
       title,
       shortTitle: shortTitle(title, brand),
       image,
-      images: images.length > 1 ? images : undefined,
       price: numberFrom(col("Price")),
       rating: numberFrom(col("Rating")),
       affiliateUrl: clean(col("Affilate Links") || col("Affiliate Links")),
