@@ -3,8 +3,9 @@ import { headsetArticle } from "./articles/best-gaming-headsets-for-under-500";
 import { hamRadioArticle } from "./articles/ham-radio-under-500";
 import { laptopArticle } from "./articles/best-gaming-laptop-under-500";
 import { refrigeratorArticle } from "./articles/refrigerator-sale-under-500";
+import { watchArticle } from "./articles/best-watches-mens-under-500";
 
-export const articles: Article[] = [laptopArticle, headsetArticle, refrigeratorArticle, hamRadioArticle];
+export const articles: Article[] = [laptopArticle, headsetArticle, refrigeratorArticle, hamRadioArticle, watchArticle];
 
 export function getArticleBySlug(slug: string): Article | undefined {
   return articles.find((article) => article.slug === slug);

@@ -158,10 +158,13 @@ export function ArticlePage({ article }: { article: Article }) {
         </div>
       </section>
       <article className="mx-auto max-w-7xl px-4 py-10 lg:px-6">
-        <section className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_300px]">
-          <div className="space-y-6">
-            <h2 className="text-3xl font-bold text-slate-950">{article.introHeading}</h2>
-            {article.introParagraphs.map((paragraph) => <p key={paragraph} className="text-lg leading-8 text-slate-700">{paragraph}</p>)}
+        <section className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_300px] lg:items-start">
+          <div className="min-w-0 space-y-4">
+            <div className="space-y-4">
+              <h2 className="text-3xl font-bold text-slate-950">{article.introHeading}</h2>
+              {article.introParagraphs.map((paragraph) => <p key={paragraph} className="text-lg leading-8 text-slate-700">{paragraph}</p>)}
+            </div>
+            <ArticleDiscoveryPanel article={article} sort={sort} onSortChange={setSort} jumpLinks={shortcutPicks} />
           </div>
           <aside className="lg:sticky lg:top-[4.5rem] lg:self-start">
             <div className="rounded-3xl border border-slate-200 bg-gradient-to-b from-white to-emerald-50/40 p-5 shadow-sm">
@@ -187,7 +190,6 @@ export function ArticlePage({ article }: { article: Article }) {
         </section>
 
         <section className="mt-8 space-y-4">
-          <ArticleDiscoveryPanel article={article} sort={sort} onSortChange={setSort} jumpLinks={shortcutPicks} />
           <h2 id="comparison-table" className="text-3xl font-bold text-slate-950 scroll-mt-28">Product comparison table</h2>
           <div className="overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-sm">
             <table className="min-w-full divide-y divide-slate-200 text-left text-sm">

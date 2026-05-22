@@ -24,6 +24,12 @@ export const articleRoutes = [
     title: "Best Ham Radio Under $500 in 2026",
     description: "Compare the best ham radio under $500 picks for mobile, handheld, HF, and dual-band transceivers.",
     category: "Tech & Outdoors"
+  },
+  {
+    path: "/best-watches-mens-under-500/",
+    title: "Best Men's Watches Under $500 in 2026",
+    description: "Compare the best men's watches under $500 with dress, dive, chronograph, Eco-Drive, and automatic picks.",
+    category: "Fashion"
   }
 ];
 
