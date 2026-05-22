@@ -1,5 +1,6 @@
 const fs = require("node:fs");
 const path = require("node:path");
+const { parseProductImages } = require("./csv-product-images.cjs");
 
 const csvPath = "c:\\Users\\DELL Latitude\\Desktop\\Shift\\New Article - Sheet1 (8).csv";
 const outFile = path.join(process.cwd(), "src", "data", "articles", "best-gaming-headsets-for-under-500.ts");
@@ -154,11 +155,13 @@ const products = rows
   .map((row, index) => {
     const title = clean(row[h.Title]);
     const bullets = meaningfulBullets(row[h["Bullet Features"]]);
+    const { image, images } = parseProductImages(row, h, clean);
     const product = {
       id: `headset-${index + 1}`,
       title,
       shortTitle: shortTitle(title),
-      image: clean(row[h["Main HD Image"]]),
+      image,
+      images,
       price: clean(row[h.ASIN]) === "B082YVPCMK" ? 199.99 : price(row[h.Price]),
       rating: rating(row[h.Rating]),
       affiliateUrl: clean(row[h["Affilate Links"]]),

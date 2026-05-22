@@ -3,6 +3,7 @@ import { SITE_NAME } from "../constants/site";
 import { articles } from "../data/articles";
 import { author } from "../data/author";
 import { staticPages } from "../data/routes";
+import { HOVER_CTAS } from "../components/PriceCtaButton";
 import type { Article, Product } from "../types";
 import { articleJsonLd, buildMetaTags, escapeHtml, metaForArticle, metaForHome, metaForStaticPage, websiteJsonLd } from "./meta";
 
@@ -47,7 +48,10 @@ export function renderArticleStatic(article: Article): string {
       <h2>Quick picks</h2>${list(article.quickPicks.map((pick) => `${pick.label}: ${pick.reason}`))}
       <h2>Comparison table</h2>
       <table><thead><tr>${article.comparisonColumns.map((column) => `<th>${escapeHtml(column)}</th>`).join("")}</tr></thead><tbody>
-      ${article.products.map((product) => `<tr><td><img src="${product.image}" alt="${escapeHtml(product.title)}" /> ${escapeHtml(product.shortTitle)}</td><td>$${product.price}</td><td>${product.rating}/5</td><td>${escapeHtml(product.badge || product.highlightFeature || "Budget pick")}</td><td>${escapeHtml(product.specs.join("; "))}</td><td><a href="${product.affiliateUrl}" rel="nofollow sponsored noopener noreferrer">Buy</a></td></tr>`).join("")}
+      ${article.products.map((product, index) => {
+        const cta = HOVER_CTAS[index % HOVER_CTAS.length];
+        return `<tr><td><img src="${product.image}" alt="${escapeHtml(product.title)}" /> ${escapeHtml(product.shortTitle)}</td><td><a href="${product.affiliateUrl}" rel="nofollow sponsored noopener noreferrer">${escapeHtml(String(product.price))} — ${escapeHtml(cta)}</a></td><td>${product.rating}/5</td><td>${escapeHtml(product.badge || product.highlightFeature || "Budget pick")}</td><td>${escapeHtml(product.specs.join("; "))}</td></tr>`;
+      }).join("")}
       </tbody></table>
       <h2>Product reviews</h2>${article.products.map(productCard).join("")}
       <h2>${escapeHtml(article.buyingGuideHeading)}</h2>${article.buyingGuide.map((item) => `<section><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.body)}</p></section>`).join("")}

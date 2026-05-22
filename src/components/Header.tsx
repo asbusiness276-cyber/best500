@@ -1,10 +1,14 @@
 import { ChevronDown, Menu, Search, Tag, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { categoryGroups, getArticlesByCategory } from "../data/articles";
 
 export function Header() {
   const [open, setOpen] = useState(false);
   const closeMenu = () => setOpen(false);
+  const categoriesWithGuides = useMemo(
+    () => categoryGroups.filter((category) => getArticlesByCategory(category).length > 0),
+    []
+  );
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -24,8 +28,7 @@ export function Header() {
             <span>BestBuy<span className="text-emerald-600">Under500</span><span className="block -mt-1 text-[10px] font-semibold text-slate-500">.com</span></span>
           </a>
           <nav className="hidden items-center gap-4 text-sm font-semibold text-slate-700 md:flex lg:gap-5">
-            <a href="/" className="rounded-full px-2 py-2 hover:bg-emerald-50 hover:text-emerald-700">Home</a>
-            {categoryGroups.map((category) => {
+            {categoriesWithGuides.map((category) => {
               const guides = getArticlesByCategory(category);
               return (
                 <div className="group relative" key={category}>
@@ -33,18 +36,16 @@ export function Header() {
                     {category} <ChevronDown className="h-3.5 w-3.5" />
                   </button>
                   <div className="invisible absolute left-0 top-full w-80 translate-y-2 rounded-2xl border border-slate-200 bg-white p-3 opacity-0 shadow-xl transition group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-                    {guides.length ? guides.map((article) => (
+                    {guides.map((article) => (
                       <a key={article.slug} href={`/${article.slug}/`} className="block rounded-xl px-3 py-2 text-slate-700 hover:bg-emerald-50 hover:text-emerald-800">
                         <span className="block font-bold">{article.navLabel}</span>
                         <span className="mt-0.5 block text-xs font-normal text-slate-500">{article.keyword}</span>
                       </a>
-                    )) : <p className="px-3 py-2 text-sm text-slate-500">Guides coming soon</p>}
+                    ))}
                   </div>
                 </div>
               );
             })}
-            <a href="/about/" className="rounded-full px-2 py-2 hover:bg-emerald-50 hover:text-emerald-700">About</a>
-            <a href="/contact/" className="rounded-full px-2 py-2 hover:bg-emerald-50 hover:text-emerald-700">Contact</a>
             <a href="/write-for-us/" className="rounded-full px-2 py-2 hover:bg-emerald-50 hover:text-emerald-700">Write for us</a>
             <Search className="h-4 w-4 text-slate-500" aria-hidden="true" />
           </nav>
@@ -69,24 +70,21 @@ export function Header() {
             </button>
           </div>
           <nav className="space-y-5">
-            <a href="/" onClick={closeMenu} className="block rounded-2xl bg-slate-50 px-4 py-3 font-semibold">Home</a>
-            {categoryGroups.map((category) => {
+            {categoriesWithGuides.map((category) => {
               const guides = getArticlesByCategory(category);
               return (
                 <section key={category}>
                   <h2 className="mb-2 text-sm font-bold uppercase tracking-wide text-slate-500">{category}</h2>
                   <div className="space-y-2">
-                    {guides.length ? guides.map((article) => (
+                    {guides.map((article) => (
                       <a key={article.slug} href={`/${article.slug}/`} onClick={closeMenu} className="block rounded-2xl border border-slate-200 px-4 py-3 font-medium text-slate-800">
                         {article.navLabel}
                       </a>
-                    )) : <p className="rounded-2xl bg-slate-50 px-4 py-3 text-slate-500">Guides coming soon</p>}
+                    ))}
                   </div>
                 </section>
               );
             })}
-            <a href="/about/" onClick={closeMenu} className="block rounded-2xl bg-slate-50 px-4 py-3 font-semibold">About</a>
-            <a href="/contact/" onClick={closeMenu} className="block rounded-2xl bg-slate-50 px-4 py-3 font-semibold">Contact</a>
             <a href="/write-for-us/" onClick={closeMenu} className="block rounded-2xl bg-slate-50 px-4 py-3 font-semibold">Write for us</a>
           </nav>
         </div>

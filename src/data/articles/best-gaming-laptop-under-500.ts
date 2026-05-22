@@ -569,8 +569,21 @@ export const laptopArticle: Article = {
     "We looked for practical machines that make sense for school, work, streaming, and light games instead of forcing every cheap gaming laptop under $500 search into one generic recommendation.",
     "The notes below clean up the supplied product sheet and explain which laptop computers under 500-style picks are better for students, storage, bigger screens, or occasional gaming."
   ],
-  filters: ["Light gaming", "School and college", "Remote work", "Fast charging", "Upgradeable storage"],
-  comparisonColumns: ["Product", "Price", "Rating", "Best for", "Key specs", "Buy"],
+  filters: [
+    "Best for gaming",
+    "Best value",
+    "Top rated",
+    "Light gaming",
+    "School and college",
+    "Remote work",
+    "Fast charging",
+    "Upgradeable storage",
+    "Large screen picks",
+    "Ryzen 7 laptops",
+    "1TB storage",
+    "NIMO Ryzen 5"
+  ],
+  comparisonColumns: ["Product", "Price", "Rating", "Best for", "Key specs"],
   products: laptopProducts,
   buyingGuideHeading: "What to check before buying a gaming laptop under $500",
   buyingGuide: [
@@ -629,12 +642,13 @@ export const laptopArticle: Article = {
     "A laptop slightly above $500 can still be the better value if it has a much stronger CPU or more memory, but only if it fits your real budget."
   ],
   relatedArticles: [],
+  featuredProductId: laptopProducts.find((product) => product.shortTitle.includes("Ryzen 7 7735HS"))?.id || laptopProducts[1]?.id,
   sortOptions: [
-    { label: "Recommended", value: "recommended" },
-    { label: "Price: low to high", value: "price-asc" },
-    { label: "Rating: high to low", value: "rating-desc" }
+    { label: "Top rated", value: "rating-desc" },
+    { label: "Price: Low to High", value: "price-asc" },
+    { label: "Price: High to Low", value: "price-desc" }
   ],
-  defaultSort: "recommended",
+  defaultSort: "rating-desc",
   publishedTime: "2026-05-21T15:34:31.802Z",
   modifiedTime: "2026-05-21T15:34:31.802Z"
 };

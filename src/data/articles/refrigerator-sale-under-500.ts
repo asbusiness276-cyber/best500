@@ -576,8 +576,21 @@ export const refrigeratorArticle: Article = {
     "This BestBuyUnder500.com guide focuses on compact and apartment-size refrigerators that balance storage capacity, freezer layout, shelf flexibility, quiet operation, and real price value.",
     "We cleaned the supplied product sheet to remove warranty-plan and marketplace noise, then rewrote the notes around the details buyers actually compare: capacity, freezer position, thermostat control, shelves, reversible doors, and everyday placement."
   ],
-  filters: ["Apartment kitchens", "Dorm rooms", "Quiet operation", "Large capacity", "Bottom freezer"],
-  comparisonColumns: ["Product", "Price", "Rating", "Best for", "Key specs", "Buy"],
+  filters: [
+    "Lowest price",
+    "Best apartment value",
+    "Top rated",
+    "Apartment kitchens",
+    "Dorm rooms",
+    "Quiet operation",
+    "Large capacity",
+    "Bottom freezer",
+    "Reversible door",
+    "Energy efficient",
+    "BLACK+DECKER 7.7",
+    "Upstreman picks"
+  ],
+  comparisonColumns: ["Product", "Price", "Rating", "Best for", "Key specs"],
   products: refrigeratorProducts,
   buyingGuideHeading: "What to check before buying a refrigerator under $500",
   buyingGuide: [
@@ -636,12 +649,13 @@ export const refrigeratorArticle: Article = {
     "If two models are close in price, choose the one with better shelves, crisper storage, and reversible door placement."
   ],
   relatedArticles: [],
+  featuredProductId: refrigeratorProducts.find((product) => product.shortTitle.includes("Upstreman") || product.shortTitle.includes("EUHOMY"))?.id || refrigeratorProducts[1]?.id,
   sortOptions: [
-    { label: "Recommended", value: "recommended" },
-    { label: "Price: low to high", value: "price-asc" },
-    { label: "Rating: high to low", value: "rating-desc" }
+    { label: "Top rated", value: "rating-desc" },
+    { label: "Price: Low to High", value: "price-asc" },
+    { label: "Price: High to Low", value: "price-desc" }
   ],
-  defaultSort: "recommended",
+  defaultSort: "rating-desc",
   publishedTime: "2026-05-21T16:50:21.470Z",
   modifiedTime: "2026-05-21T16:50:21.470Z"
 };

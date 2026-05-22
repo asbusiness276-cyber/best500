@@ -1,5 +1,6 @@
 const fs = require("node:fs");
 const path = require("node:path");
+const { parseProductImages } = require("./csv-product-images.cjs");
 
 const csvPath = "c:\\Users\\DELL Latitude\\Desktop\\Shift\\New Article - Sheet1 (9).csv";
 const outFile = path.join(process.cwd(), "src", "data", "articles", "refrigerator-sale-under-500.ts");
@@ -174,11 +175,13 @@ const products = rows
     const title = clean(row[h.Title]);
     const bullets = meaningfulBullets(row[h["Bullet Features"]]);
     const brand = brandFrom(row[h.Brand], title);
+    const { image, images } = parseProductImages(row, h, clean);
     const product = {
       id: `refrigerator-${index + 1}`,
       title,
       shortTitle: shortTitle(title, brand),
-      image: clean(row[h["Main HD Image"]]),
+      image,
+      images,
       price: numberFrom(row[h.Price]),
       rating: numberFrom(row[h.Rating]),
       affiliateUrl: clean(row[h["Affilate Links"]]),

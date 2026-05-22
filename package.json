@@ -19,6 +19,7 @@
     "@tailwindcss/postcss": "latest",
     "autoprefixer": "latest",
     "postcss": "latest",
+    "sharp": "^0.34.5",
     "tailwindcss": "latest"
   }
 }

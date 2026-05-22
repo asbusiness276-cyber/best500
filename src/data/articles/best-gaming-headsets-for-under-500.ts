@@ -348,8 +348,21 @@ export const headsetArticle: Article = {
     "For readers searching affordable AR headsets under $500 for developers, this guide is focused on audio headsets for gaming, coding, meetings, spatial audio, and immersive desk setups rather than standalone AR glasses.",
     "We cleaned the supplied product sheet, removed warranty and marketplace noise, preserved each affiliate URL, and rewrote the product notes around sound, mic quality, comfort, wireless features, and real buyer tradeoffs."
   ],
-  filters: ["Wireless gaming", "Noise canceling", "Spatial audio", "Developer desk setup", "Console and PC"],
-  comparisonColumns: ["Product", "Price", "Rating", "Best for", "Key specs", "Buy"],
+  filters: [
+    "Best budget pick",
+    "Best wireless value",
+    "Top rated",
+    "Wireless gaming",
+    "Noise canceling",
+    "Spatial audio",
+    "Developer desk setup",
+    "Console and PC",
+    "Audiophile sound",
+    "Long battery life",
+    "Razer Barracuda X",
+    "Logitech G Pro X"
+  ],
+  comparisonColumns: ["Product", "Price", "Rating", "Best for", "Key specs"],
   products: headsetProducts,
   buyingGuideHeading: "What to check before buying a gaming headset under $500",
   buyingGuide: [
@@ -408,12 +421,13 @@ export const headsetArticle: Article = {
     "For competitive gaming, low-latency wireless or wired support matters more than generic Bluetooth alone."
   ],
   relatedArticles: ["best-gaming-laptop-under-500"],
+  featuredProductId: headsetProducts.find((product) => product.title.includes("Logitech"))?.id || headsetProducts[1]?.id,
   sortOptions: [
-    { label: "Recommended", value: "recommended" },
-    { label: "Price: low to high", value: "price-asc" },
-    { label: "Rating: high to low", value: "rating-desc" }
+    { label: "Top rated", value: "rating-desc" },
+    { label: "Price: Low to High", value: "price-asc" },
+    { label: "Price: High to Low", value: "price-desc" }
   ],
-  defaultSort: "recommended",
+  defaultSort: "rating-desc",
   publishedTime: "2026-05-21T15:58:13.913Z",
   modifiedTime: "2026-05-21T15:58:13.913Z"
 };

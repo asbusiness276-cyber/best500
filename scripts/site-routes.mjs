@@ -18,6 +18,12 @@ export const articleRoutes = [
     title: "Refrigerator Sale Under $500 in 2026",
     description: "Compare refrigerator sale under $500 picks for apartments, dorms, offices, and compact kitchens.",
     category: "Home & Living"
+  },
+  {
+    path: "/ham-radio-under-500/",
+    title: "Best Ham Radio Under $500 in 2026",
+    description: "Compare the best ham radio under $500 picks for mobile, handheld, HF, and dual-band transceivers.",
+    category: "Tech & Outdoors"
   }
 ];
 
