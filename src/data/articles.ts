@@ -6,8 +6,9 @@ import { refrigeratorArticle } from "./articles/refrigerator-sale-under-500";
 import { watchArticle } from "./articles/best-watches-mens-under-500";
 import { goKartArticle } from "./articles/gas-go-karts-under-500";
 import { washerDryerArticle } from "./articles/best-washer-and-dryer-bundles-under-500";
+import { electricDirtBikeArticle } from "./articles/electric-dirt-bike-under-500";
 
-export const articles: Article[] = [laptopArticle, headsetArticle, refrigeratorArticle, washerDryerArticle, hamRadioArticle, watchArticle, goKartArticle];
+export const articles: Article[] = [laptopArticle, headsetArticle, refrigeratorArticle, washerDryerArticle, hamRadioArticle, watchArticle, goKartArticle, electricDirtBikeArticle];
 
 export function getArticleBySlug(slug: string): Article | undefined {
   return articles.find((article) => article.slug === slug);

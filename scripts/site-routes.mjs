@@ -42,6 +42,12 @@ export const articleRoutes = [
     title: "Gas Go Karts Under $500 in 2026",
     description: "Compare gas go karts under $500 with gas ATVs, electric drift karts, safety notes, and budget ride-on picks.",
     category: "Sports & Outdoors"
+  },
+  {
+    path: "/electric-dirt-bike-under-500/",
+    title: "Electric Dirt Bike Under $500 in 2026",
+    description: "Compare electric dirt bikes under $500 with adult and youth picks, motor power, range, hydraulic brakes, and honest Amazon pricing notes.",
+    category: "Sports & Outdoors"
   }
 ];
 
