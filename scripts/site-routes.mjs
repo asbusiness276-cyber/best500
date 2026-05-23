@@ -20,6 +20,12 @@ export const articleRoutes = [
     category: "Home & Living"
   },
   {
+    path: "/best-washer-and-dryer-bundles-under-500/",
+    title: "Best Washer & Dryer Bundles Under $500 in 2026",
+    description: "Compare the best washer and dryer bundles under $500 with portable sets, compact combos, capacity, and apartment-friendly value notes.",
+    category: "Home & Living"
+  },
+  {
     path: "/ham-radio-under-500/",
     title: "Best Ham Radio Under $500 in 2026",
     description: "Compare the best ham radio under $500 picks for mobile, handheld, HF, and dual-band transceivers.",
@@ -30,6 +36,12 @@ export const articleRoutes = [
     title: "Best Men's Watches Under $500 in 2026",
     description: "Compare the best men's watches under $500 with dress, dive, chronograph, Eco-Drive, and automatic picks.",
     category: "Fashion"
+  },
+  {
+    path: "/gas-go-karts-under-500/",
+    title: "Gas Go Karts Under $500 in 2026",
+    description: "Compare gas go karts under $500 with gas ATVs, electric drift karts, safety notes, and budget ride-on picks.",
+    category: "Sports & Outdoors"
   }
 ];
 

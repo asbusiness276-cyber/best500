@@ -1,7 +1,9 @@
 {
   "type": "module",
   "scripts": {
-    "prebuild": "node scripts/generate-seo-files.mjs && tsx scripts/export-seo-pages.ts",
+    "verify:articles": "node scripts/verify-articles-imports.mjs",
+    "predev": "node scripts/verify-articles-imports.mjs",
+    "prebuild": "node scripts/verify-articles-imports.mjs && node scripts/generate-seo-files.mjs && tsx scripts/export-seo-pages.ts",
     "build": "vite build && node scripts/prerender-static.mjs && node scripts/verify-prerender.mjs && node scripts/verify-schema.mjs && node scripts/verify-meta.mjs",
     "dev": "vite --host 0.0.0.0",
     "preview": "vite preview --host 0.0.0.0"
