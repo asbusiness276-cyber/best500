@@ -2,6 +2,39 @@ import type { Article, Product } from "../../types";
 
 export const headsetProducts: Product[] = [
   {
+    "id": "headset-3",
+    "title": "Logitech G Pro X 2 Lightspeed Wireless Gaming Headset + G515 TKL Wireless Gaming Keyboard Bundle (Tactile) - Black",
+    "shortTitle": "Logitech G Pro X 2 Lightspeed Bundle",
+    "image": "https://m.media-amazon.com/images/I/51B7iN+hDeL._AC_SL1001_.jpg",
+    "price": 359,
+    "rating": 5,
+    "affiliateUrl": "https://amzn.to/49yKUvd",
+    "asin": "B0D8N8KBDZ",
+    "specs": [
+      "Connection: Wireless / Bluetooth",
+      "Connection: Wired support",
+      "Battery: Long-play design",
+      "Sound: Audiophile-style tuning"
+    ],
+    "features": [
+      "Connection: Wireless / Bluetooth",
+      "Connection: Wired support",
+      "Battery: Long-play design",
+      "Sound: Audiophile-style tuning",
+      "Battery or quick-charge features for long sessions"
+    ],
+    "pros": [
+      "Wireless connectivity is convenient for gaming and desk setups",
+      "Battery-focused design supports longer sessions"
+    ],
+    "cons": [
+      "Bundle pricing can make headset-to-headset comparisons less direct",
+      "Mic details may be limited, so verify chat features before buying"
+    ],
+    "badge": "Best pick",
+    "highlightFeature": "Wireless / Bluetooth"
+  },
+  {
     "id": "headset-1",
     "title": "ASUS Gaming Headset ROG Theta 7.1 | Ai Noise Cancelling Headphones with Mic | ROG Home-Theatre-Grade 7.1 DAC, and Aura Syn RGB Lighting",
     "shortTitle": "ASUS Gaming Headset ROG Theta 7.1",
@@ -58,39 +91,6 @@ export const headsetProducts: Product[] = [
       "Mic details may be limited, so verify chat features before buying"
     ],
     "badge": "Best wireless value",
-    "highlightFeature": "Wireless / Bluetooth"
-  },
-  {
-    "id": "headset-3",
-    "title": "Logitech G Pro X 2 Lightspeed Wireless Gaming Headset + G515 TKL Wireless Gaming Keyboard Bundle (Tactile) - Black",
-    "shortTitle": "Logitech G Pro X 2 Lightspeed Bundle",
-    "image": "https://m.media-amazon.com/images/I/51B7iN+hDeL._AC_SL1001_.jpg",
-    "price": 359,
-    "rating": 5,
-    "affiliateUrl": "https://amzn.to/49yKUvd",
-    "asin": "B0D8N8KBDZ",
-    "specs": [
-      "Connection: Wireless / Bluetooth",
-      "Connection: Wired support",
-      "Battery: Long-play design",
-      "Sound: Audiophile-style tuning"
-    ],
-    "features": [
-      "Connection: Wireless / Bluetooth",
-      "Connection: Wired support",
-      "Battery: Long-play design",
-      "Sound: Audiophile-style tuning",
-      "Battery or quick-charge features for long sessions"
-    ],
-    "pros": [
-      "Wireless connectivity is convenient for gaming and desk setups",
-      "Battery-focused design supports longer sessions"
-    ],
-    "cons": [
-      "Bundle pricing can make headset-to-headset comparisons less direct",
-      "Mic details may be limited, so verify chat features before buying"
-    ],
-    "badge": "Best premium audio",
     "highlightFeature": "Wireless / Bluetooth"
   },
   {
@@ -346,7 +346,7 @@ export const headsetArticle: Article = {
   introParagraphs: [
     "This BestBuyUnder500.com guide focuses on headsets that stay below the $500 ceiling while offering strong audio, clear communication, and comfortable long-session use.",
     "For readers searching affordable AR headsets under $500 for developers, this guide is focused on audio headsets for gaming, coding, meetings, spatial audio, and immersive desk setups rather than standalone AR glasses.",
-    "We cleaned the supplied product sheet, removed warranty and marketplace noise, preserved each affiliate URL, and rewrote the product notes around sound, mic quality, comfort, wireless features, and real buyer tradeoffs."
+    "We compared sound tuning, mic quality, connection type, noise canceling, and comfort for long gaming, streaming, and desk sessions."
   ],
   filters: [
     "Best budget pick",
@@ -362,7 +362,7 @@ export const headsetArticle: Article = {
     "Razer Barracuda X",
     "Logitech G Pro X"
   ],
-  comparisonColumns: ["Product", "Price", "Rating", "Best for", "Key specs"],
+  comparisonColumns: ["Product", "Price", "Rating", "Best for", "Driver", "Connectivity", "Battery", "Mic"],
   products: headsetProducts,
   buyingGuideHeading: "What to check before buying a gaming headset under $500",
   buyingGuide: [
@@ -410,8 +410,8 @@ export const headsetArticle: Article = {
     }
   ],
   quickPicks: [
-    { label: "Lowest listed price", productId: headsetProducts[0]?.id || "", reason: "Strong entry point if you want to spend far less than $500." },
-    { label: "Best wireless gaming bundle", productId: headsetProducts.find((product) => product.title.includes("Logitech"))?.id || headsetProducts[1]?.id || "", reason: "Wireless gaming features and bundled gear may suit a full desk upgrade." },
+    { label: "Best pick", productId: "headset-3", reason: "Logitech G Pro X 2 Lightspeed bundle — 5-star rating, wireless gaming, and strong mic at $359." },
+    { label: "Lowest price", productId: "headset-1", reason: "ASUS ROG Theta 7.1 at $99.99 — lowest entry point for wired surround gaming audio." },
     { label: "Best premium audio", productId: headsetProducts.find((product) => product.title.includes("Sennheiser"))?.id || headsetProducts[2]?.id || "", reason: "Audio-first tuning for music, editing, and immersive play." }
   ],
   budgetTips: [
@@ -421,7 +421,7 @@ export const headsetArticle: Article = {
     "For competitive gaming, low-latency wireless or wired support matters more than generic Bluetooth alone."
   ],
   relatedArticles: ["best-gaming-laptop-under-500"],
-  featuredProductId: headsetProducts.find((product) => product.title.includes("Logitech"))?.id || headsetProducts[1]?.id,
+  featuredProductId: "headset-3",
   sortOptions: [
     { label: "Top rated", value: "rating-desc" },
     { label: "Price: Low to High", value: "price-asc" },

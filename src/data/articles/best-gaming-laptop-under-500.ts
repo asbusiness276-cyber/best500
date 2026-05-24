@@ -2,6 +2,42 @@ import type { Article, Product } from "../../types";
 
 export const laptopProducts: Product[] = [
   {
+    "id": "laptop-3",
+    "title": "Gaming Laptop,Window 11 Pro Laptop Computer, 15.6 Inch Lap Top PC 2026, AMD Ryzen 7 5700U Processor,16GB RAM 1TB SSD, FHD Display,WiFi 5,BT5.0,Backlit Keyboard for Business, School, Work, Student, Kid",
+    "shortTitle": "NIAKUN Ryzen 7 5700U Laptop",
+    "image": "https://m.media-amazon.com/images/I/711r3RNmNoL._AC_SL1500_.jpg",
+    "price": 499,
+    "rating": 5,
+    "affiliateUrl": "https://amzn.to/4dxJu53",
+    "asin": "B0GX9YZVSC",
+    "specs": [
+      "Processor: AMD Ryzen 7 5700U",
+      "Memory: 16GB RAM",
+      "Storage: 1TB SSD",
+      "Display: 15.6 Inch",
+      "Graphics: Radeon Vega 8",
+      "Platform: WiFi 5"
+    ],
+    "features": [
+      "Processor: AMD Ryzen 7 5700U",
+      "Memory: 16GB RAM",
+      "Storage: 1TB SSD",
+      "Display: 15.6 Inch",
+      "Graphics: Radeon Vega 8"
+    ],
+    "pros": [
+      "Strong processor for multitasking and everyday creative work",
+      "Extra memory is helpful for heavier browser and app workloads",
+      "Large SSD gives more room for games, media, and school files"
+    ],
+    "cons": [
+      "Integrated graphics are best for light gaming, not demanding AAA titles",
+      "Wireless specs may be less future-proof than newer Wi-Fi 6 laptops"
+    ],
+    "badge": "Best pick",
+    "highlightFeature": "AMD Ryzen 7 5700U"
+  },
+  {
     "id": "laptop-1",
     "title": "NIMO 15.6\" IPS FHD-Gaming-Laptop,AMD Ryzen 5 6600H 16GB DDR5 RAM 512GB SSD (Beat i5-1335U, 6 Cores Up to 4.5GHz) AMD Radeon 660M GPU-Computer with 100W Type-C Backlit Keyboard Fingerprint",
     "shortTitle": "NIMO 15.6\" Ryzen 5 6600H Laptop",
@@ -68,42 +104,6 @@ export const laptopProducts: Product[] = [
     ],
     "badge": "Under $500 pick",
     "highlightFeature": "AMD Ryzen 5 6600H"
-  },
-  {
-    "id": "laptop-3",
-    "title": "Gaming Laptop,Window 11 Pro Laptop Computer, 15.6 Inch Lap Top PC 2026, AMD Ryzen 7 5700U Processor,16GB RAM 1TB SSD, FHD Display,WiFi 5,BT5.0,Backlit Keyboard for Business, School, Work, Student, Kid",
-    "shortTitle": "NIAKUN Ryzen 7 5700U Laptop",
-    "image": "https://m.media-amazon.com/images/I/711r3RNmNoL._AC_SL1500_.jpg",
-    "price": 499,
-    "rating": 5,
-    "affiliateUrl": "https://amzn.to/4dxJu53",
-    "asin": "B0GX9YZVSC",
-    "specs": [
-      "Processor: AMD Ryzen 7 5700U",
-      "Memory: 16GB RAM",
-      "Storage: 1TB SSD",
-      "Display: 15.6 Inch",
-      "Graphics: Radeon Vega 8",
-      "Platform: WiFi 5"
-    ],
-    "features": [
-      "Processor: AMD Ryzen 7 5700U",
-      "Memory: 16GB RAM",
-      "Storage: 1TB SSD",
-      "Display: 15.6 Inch",
-      "Graphics: Radeon Vega 8"
-    ],
-    "pros": [
-      "Strong processor for multitasking and everyday creative work",
-      "Extra memory is helpful for heavier browser and app workloads",
-      "Large SSD gives more room for games, media, and school files"
-    ],
-    "cons": [
-      "Integrated graphics are best for light gaming, not demanding AAA titles",
-      "Wireless specs may be less future-proof than newer Wi-Fi 6 laptops"
-    ],
-    "badge": "Best balanced",
-    "highlightFeature": "AMD Ryzen 7 5700U"
   },
   {
     "id": "laptop-4",
@@ -560,14 +560,14 @@ export const laptopArticle: Article = {
   heroTitleLine1: "Best Gaming Laptop",
   heroTitleLine2: "Under $500",
   heroSubtitle:
-    "A practical shortlist of affordable laptops for school, work, streaming, and light gaming, based on the supplied product sheet.",
+    "A practical shortlist of affordable laptops for school, work, streaming, and light gaming with specs you can compare side by side.",
   heroTrustNote:
     "Prices change often. Some models sit just above $500 before coupons, so compare the live price before buying.",
   introHeading: "How we picked these budget laptops",
   introParagraphs: [
     "This BestBuyUnder500.com guide focuses on laptops that balance processor strength, memory, storage, display quality, and everyday reliability near the $500 price point.",
     "We looked for practical machines that make sense for school, work, streaming, and light games instead of forcing every cheap gaming laptop under $500 search into one generic recommendation.",
-    "The notes below clean up the supplied product sheet and explain which laptop computers under 500-style picks are better for students, storage, bigger screens, or occasional gaming."
+    "The notes below explain which laptop computers under 500-style picks are better for students, storage, bigger screens, or occasional gaming."
   ],
   filters: [
     "Best for gaming",
@@ -583,7 +583,7 @@ export const laptopArticle: Article = {
     "1TB storage",
     "NIMO Ryzen 5"
   ],
-  comparisonColumns: ["Product", "Price", "Rating", "Best for", "Key specs"],
+  comparisonColumns: ["Product", "Price", "Rating", "Best for", "Processor", "Memory", "Storage", "Display"],
   products: laptopProducts,
   buyingGuideHeading: "What to check before buying a gaming laptop under $500",
   buyingGuide: [
@@ -627,12 +627,12 @@ export const laptopArticle: Article = {
     {
       question: "Why do some picks cost more than $500?",
       answer:
-        "The supplied sheet includes several models that hover near the $500 mark but can move above it. We call that out so readers comparing good laptops under 500 or PC laptops under 500 can watch for discounts instead of assuming a fixed price."
+        "Several models hover near the $500 mark but can move above it when sales end. We call that out so readers comparing good laptops under 500 or PC laptops under 500 can watch for discounts instead of assuming a fixed price."
     }
   ],
   quickPicks: [
-    { label: "Lowest listed price", productId: laptopProducts[0]?.id || "", reason: "Good first stop when staying close to $500 matters most." },
-    { label: "Best balanced specs", productId: laptopProducts.find((product) => product.shortTitle.includes("Ryzen 7 7735HS"))?.id || laptopProducts[1]?.id || "", reason: "Strong CPU class, modern memory, and a practical 16-inch screen." },
+    { label: "Best pick", productId: "laptop-3", reason: "Ryzen 7 5700U, 1TB SSD, and 5-star rating — strongest balanced specs under $500." },
+    { label: "Lowest price", productId: "laptop-1", reason: "NIMO Ryzen 5 6600H at $479 — lowest listed price with 16GB DDR5 and 512GB SSD." },
     { label: "Best large screen", productId: laptopProducts.find((product) => product.shortTitle.includes("17.3"))?.id || laptopProducts[2]?.id || "", reason: "A bigger display helps with school, spreadsheets, and streaming." }
   ],
   budgetTips: [
@@ -642,7 +642,7 @@ export const laptopArticle: Article = {
     "A laptop slightly above $500 can still be the better value if it has a much stronger CPU or more memory, but only if it fits your real budget."
   ],
   relatedArticles: [],
-  featuredProductId: laptopProducts.find((product) => product.shortTitle.includes("Ryzen 7 7735HS"))?.id || laptopProducts[1]?.id,
+  featuredProductId: "laptop-3",
   sortOptions: [
     { label: "Top rated", value: "rating-desc" },
     { label: "Price: Low to High", value: "price-asc" },

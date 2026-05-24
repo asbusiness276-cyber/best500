@@ -2,6 +2,44 @@ import type { Article, Product } from "../../types";
 
 export const hamRadioProducts: Product[] = [
   {
+    "id": "ham-radio-7",
+    "title": "Radioddity QT60 Pro 10 Meter Radio SSB, AM, FM, PA, 60W High Power Amateur Ham Mobile Transceiver, Large LCD Display, RX & TX Noise Reduction, NOAA with Alert, with CTCSS/DCS, ASQ",
+    "shortTitle": "Radioddity QT60 10M Mobile",
+    "image": "https://m.media-amazon.com/images/I/71vLdsOeWyL._AC_SL1500_.jpg",
+    "images": [
+      "https://m.media-amazon.com/images/I/71vLdsOeWyL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71vLdsOeWyL._AC_SL1500_.jpg https://m.media-amazon.com/images/I/811tXMExvYL._AC_SL1500_.jpg https://m.media-amazon.com/images/I/71U2rVK0W+L._AC_SL1500_.jpg https://m.media-amazon.com/images/I/81DmwCaznxL._AC_SL1500_.jpg https://m.media-amazon.com/images/I/81TEpLnVGfL._AC_SL1500_.jpg https://m.media-amazon.com/images/I/81Cks3mhzIL._AC_SL1500_.jpg https://m.media-amazon.com/images/I/71-o+kRLlhL._AC_SL1500_.jpg https://m.media-amazon.com/images/I/71dU04dH7sL._AC_SL1500_.jpg"
+    ],
+    "price": 259,
+    "rating": 4.6,
+    "affiliateUrl": "https://amzn.to/4fBB2V2",
+    "asin": "B0CFQT4KWB",
+    "specs": [
+      "Power: 60W High Power",
+      "Bands: 10-meter band",
+      "Modes: SSB, AM, FM",
+      "Type: Mobile mount",
+      "Audio: Noise reduction"
+    ],
+    "features": [
+      "Power: 60W High Power",
+      "Bands: 10-meter band",
+      "Modes: SSB, AM, FM",
+      "Type: Mobile mount",
+      "Audio: Noise reduction"
+    ],
+    "pros": [
+      "High power output supports longer-range communication",
+      "Noise reduction features improve clarity in noisy environments"
+    ],
+    "cons": [
+      "Requires appropriate amateur radio licensing before transmitting",
+      "May need PC programming or firmware updates for full feature access"
+    ],
+    "highlightFeature": "60W High Power",
+    "badge": "Best pick"
+  },
+  {
     "id": "ham-radio-1",
     "title": "Wouxun KG-Q10H Quad Band Handheld Amateur Radio (Black)",
     "shortTitle": "Wouxun KG-Q10H Quad-Band Handheld",
@@ -210,43 +248,6 @@ export const hamRadioProducts: Product[] = [
       "May need PC programming or firmware updates for full feature access"
     ],
     "highlightFeature": "50W High Power"
-  },
-  {
-    "id": "ham-radio-7",
-    "title": "Radioddity QT60 Pro 10 Meter Radio SSB, AM, FM, PA, 60W High Power Amateur Ham Mobile Transceiver, Large LCD Display, RX & TX Noise Reduction, NOAA with Alert, with CTCSS/DCS, ASQ",
-    "shortTitle": "Radioddity QT60 10M Mobile",
-    "image": "https://m.media-amazon.com/images/I/71vLdsOeWyL._AC_SL1500_.jpg",
-    "images": [
-      "https://m.media-amazon.com/images/I/71vLdsOeWyL._AC_SL1500_.jpg",
-      "https://m.media-amazon.com/images/I/71vLdsOeWyL._AC_SL1500_.jpg https://m.media-amazon.com/images/I/811tXMExvYL._AC_SL1500_.jpg https://m.media-amazon.com/images/I/71U2rVK0W+L._AC_SL1500_.jpg https://m.media-amazon.com/images/I/81DmwCaznxL._AC_SL1500_.jpg https://m.media-amazon.com/images/I/81TEpLnVGfL._AC_SL1500_.jpg https://m.media-amazon.com/images/I/81Cks3mhzIL._AC_SL1500_.jpg https://m.media-amazon.com/images/I/71-o+kRLlhL._AC_SL1500_.jpg https://m.media-amazon.com/images/I/71dU04dH7sL._AC_SL1500_.jpg"
-    ],
-    "price": 259,
-    "rating": 4.6,
-    "affiliateUrl": "https://amzn.to/4fBB2V2",
-    "asin": "B0CFQT4KWB",
-    "specs": [
-      "Power: 60W High Power",
-      "Bands: 10-meter band",
-      "Modes: SSB, AM, FM",
-      "Type: Mobile mount",
-      "Audio: Noise reduction"
-    ],
-    "features": [
-      "Power: 60W High Power",
-      "Bands: 10-meter band",
-      "Modes: SSB, AM, FM",
-      "Type: Mobile mount",
-      "Audio: Noise reduction"
-    ],
-    "pros": [
-      "High power output supports longer-range communication",
-      "Noise reduction features improve clarity in noisy environments"
-    ],
-    "cons": [
-      "Requires appropriate amateur radio licensing before transmitting",
-      "May need PC programming or firmware updates for full feature access"
-    ],
-    "highlightFeature": "60W High Power"
   },
   {
     "id": "ham-radio-8",
@@ -592,10 +593,10 @@ export const hamRadioArticle: Article = {
   introHeading: "How we picked ham radios under $500",
   introParagraphs: [
     "This BestBuyUnder500.com guide focuses on ham radios that stay below the $500 ceiling while offering useful power, band coverage, and features for licensed operators.",
-    "We cleaned the supplied product sheet to remove warranty-plan and marketplace noise, preserved each affiliate URL, and rewrote the notes around the details buyers actually compare: power output, bands, modes, mobile vs handheld form factor, programming, and noise reduction."
+    "We compared mobile, handheld, and HF rigs on band coverage, power output, operating modes, and programming needs for licensed operators shopping near the $500 ceiling."
   ],
   filters: ["Mobile mount", "Handheld", "Dual-band VHF/UHF", "HF/SSB", "High power"],
-  comparisonColumns: ["Product", "Price", "Rating", "Best for", "Key specs", "Buy"],
+  comparisonColumns: ["Product", "Price", "Rating", "Best for", "Bands", "Power", "Type", "Features", "Buy"],
   products: hamRadioProducts,
   buyingGuideHeading: "What to check before buying a ham radio under $500",
   buyingGuide: [
@@ -643,9 +644,11 @@ export const hamRadioArticle: Article = {
     }
   ],
   quickPicks: [
-    { label: "Lowest listed price", productId: hamRadioProducts[0]?.id || "", reason: "Best starting point if keeping radio budget low matters most." },
+    { label: "Best pick", productId: "ham-radio-7", reason: "Best pick: 4.6 rating, $259, 2 strong pros (score 563)." },
+    { label: "Lowest price", productId: "ham-radio-1", reason: "Lowest upfront price at $219 among picks under the cap." },
     { label: "Best mobile dual-band", productId: hamRadioProducts.find((product) => /dual.?band|uv-50|db50|db-25/i.test(product.title))?.id || hamRadioProducts[1]?.id || "", reason: "Strong VHF/UHF mobile value for repeaters and local comms." },
     { label: "Best HF transceiver", productId: hamRadioProducts.find((product) => /hf|g90|g106|ssb/i.test(product.title))?.id || hamRadioProducts[2]?.id || "", reason: "HF capability for long-distance amateur communication." }
+  
   ],
   budgetTips: [
     "Budget for antennas, coax, and mounting hardware — the radio is rarely the only purchase.",
@@ -654,6 +657,7 @@ export const hamRadioArticle: Article = {
     "Check whether programming software and cables are included or sold separately."
   ],
   relatedArticles: ["best-gaming-laptop-under-500", "best-gaming-headsets-for-under-500"],
+  featuredProductId: "ham-radio-7",
   sortOptions: [
     { label: "Recommended", value: "recommended" },
     { label: "Price: low to high", value: "price-asc" },

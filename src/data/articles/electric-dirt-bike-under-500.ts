@@ -33,7 +33,7 @@ export const electricDirtBikeProducts: Product[] = [
       "Live price may sit slightly above a strict $500 cap even when close in search"
     ],
     "highlightFeature": "3500W peak",
-    "badge": "Best value pick",
+    "badge": "Best buy pick",
     "id": "e-dirt-bike-1"
   },
   {
@@ -983,7 +983,7 @@ export const electricDirtBikeArticle: Article = {
     "Always confirm live Amazon pricing, local riding laws, age limits, and safety gear before buying any electric dirt bike.",
   introHeading: "How we picked electric dirt bikes under $500",
   introParagraphs: [
-    "This BestBuyUnder500.com guide covers electric dirt bike under $500 searches alongside electric dirt bikes under $500 and electric dirt bikes under 500 listings that often land between about $510 and $720 at retail. We cleaned warranty-plan noise from the source sheet and focused on real bikes with motors, batteries, and trail hardware.",
+    "This BestBuyUnder500.com guide covers electric dirt bike under $500 searches alongside listings that often land between about $510 and $720 at retail. We focused on real bikes with motors, batteries, and trail hardware.",
     "Most adult electric dirt bike for adults under $500 picks are high-torque e-motorcycles with 48V packs—not gas 125cc dirt bike under 500 or 110cc dirt bike under $500 frames. We also note youth RFN and KOOZ models when parents compare them to used dirt bikes under $500, and we flag when live price sits above a strict $500 cap."
   ],
   filters: [
@@ -1001,7 +1001,7 @@ export const electricDirtBikeArticle: Article = {
     "ESKUTE",
     "RFN kids"
   ],
-  comparisonColumns: ["Product", "Price", "Rating", "Best for", "Key specs"],
+  comparisonColumns: ["Product", "Price", "Rating", "Best for", "Motor", "Speed", "Range", "Battery"],
   products: electricDirtBikeProducts,
   buyingGuideHeading: "What to check before buying an e dirt bike under $500",
   buyingGuide: [
@@ -1049,12 +1049,12 @@ export const electricDirtBikeArticle: Article = {
     }
   ],
   quickPicks: [
-    { label: "Best value pick", productId: "e-dirt-bike-1", reason: "Strong adult-oriented specs, 5-star buyer rating, and removable 48V battery near the top of the cleaned sheet." },
-    { label: "Lowest price", productId: "e-dirt-bike-2", reason: "Lowest upfront price in the comparison when you need to stay closest to a $500 budget." },
-    { label: "Top rated", productId: "e-dirt-bike-1", reason: "Highest buyer rating among the electric dirt bikes we parsed from the CSV." }
+    { label: "Best buy pick", productId: "e-dirt-bike-1", reason: "Malzahar 3500W — 5-star rating, 40 MPH, 60-mile range, and hydraulic brakes (top scored pick)." },
+    { label: "Lowest price", productId: "e-dirt-bike-2", reason: "XHURDYUA 1500W at $508.99 — lowest listed price among adult electric dirt bikes here." },
+    { label: "Top rated", productId: "e-dirt-bike-1", reason: "Highest overall score with 5-star rating and strongest adult trail specs." }
   ],
   budgetTips: [
-    "Ignore scraped protection-plan bullet text and compare motor, battery Ah, brakes, and suspension instead.",
+    "Compare motor, battery Ah, brakes, and suspension—not add-on warranty listings.",
     "If you need a true electric dirt bike under $500, watch for coupons or consider youth models—not 3000W adult builds.",
     "Leave budget for a helmet, gloves, and pads; many listings assume off-road-only use.",
     "Check whether your pick is 90% pre-assembled and keep original packaging for warranty support."

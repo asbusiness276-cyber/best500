@@ -2,6 +2,39 @@ import type { Article, Product } from "../../types";
 
 export const watchProducts: Product[] = [
   {
+    "id": "watch-3",
+    "title": "Bulova Men's Marine Star Series B Stainless Steel 6-Hand Chronograph Quartz Watch, 100M",
+    "shortTitle": "Bulova Marine Star Chronograph",
+    "image": "https://m.media-amazon.com/images/I/61+BJKMO+bL._AC_SL1000_.jpg",
+    "price": 259,
+    "rating": 4.7,
+    "affiliateUrl": "https://www.amazon.com/dp/B01AJF1KLS/?tag=visitbest07-20",
+    "asin": "B01AJF1KLS",
+    "specs": [
+      "Movement: Quartz",
+      "Complications: Chronograph / multi-function",
+      "Water resistance: 100M",
+      "Band: Stainless steel bracelet"
+    ],
+    "features": [
+      "Movement: Quartz",
+      "Complications: Chronograph / multi-function",
+      "Water resistance: 100M",
+      "Band: Stainless steel bracelet",
+      "Useful timing and calendar complications"
+    ],
+    "pros": [
+      "Chronograph or GMT features add useful everyday functionality",
+      "Strong buyer ratings compared with other picks in this guide",
+      "Leaves room in a $500 budget for straps, sizing, or a second casual watch"
+    ],
+    "cons": [
+      "Standard quartz lacks the enthusiast appeal of automatic or Eco-Drive models"
+    ],
+    "badge": "Best pick",
+    "highlightFeature": "Quartz"
+  },
+  {
     "id": "watch-1",
     "title": "Citizen Men's Classic Corso Eco-Drive Watch, 3-Hand Date, Luminous Hands and Markers",
     "shortTitle": "CITIZEN Corso Eco-Drive",
@@ -27,7 +60,6 @@ export const watchProducts: Product[] = [
     "cons": [
       "Check case size, lug width, and band fit against your wrist before ordering"
     ],
-    "badge": "Best overall pick",
     "highlightFeature": "Eco-Drive solar quartz"
   },
   {
@@ -59,39 +91,6 @@ export const watchProducts: Product[] = [
       "Standard quartz lacks the enthusiast appeal of automatic or Eco-Drive models"
     ],
     "badge": "Best budget value",
-    "highlightFeature": "Quartz"
-  },
-  {
-    "id": "watch-3",
-    "title": "Bulova Men's Marine Star Series B Stainless Steel 6-Hand Chronograph Quartz Watch, 100M",
-    "shortTitle": "Bulova Marine Star Chronograph",
-    "image": "https://m.media-amazon.com/images/I/61+BJKMO+bL._AC_SL1000_.jpg",
-    "price": 259,
-    "rating": 4.7,
-    "affiliateUrl": "https://www.amazon.com/dp/B01AJF1KLS/?tag=visitbest07-20",
-    "asin": "B01AJF1KLS",
-    "specs": [
-      "Movement: Quartz",
-      "Complications: Chronograph / multi-function",
-      "Water resistance: 100M",
-      "Band: Stainless steel bracelet"
-    ],
-    "features": [
-      "Movement: Quartz",
-      "Complications: Chronograph / multi-function",
-      "Water resistance: 100M",
-      "Band: Stainless steel bracelet",
-      "Useful timing and calendar complications"
-    ],
-    "pros": [
-      "Chronograph or GMT features add useful everyday functionality",
-      "Strong buyer ratings compared with other picks in this guide",
-      "Leaves room in a $500 budget for straps, sizing, or a second casual watch"
-    ],
-    "cons": [
-      "Standard quartz lacks the enthusiast appeal of automatic or Eco-Drive models"
-    ],
-    "badge": "Best automatic",
     "highlightFeature": "Quartz"
   },
   {
@@ -1022,8 +1021,7 @@ export const watchArticle: Article = {
   introHeading: "How we picked men's watches under $500",
   introParagraphs: [
     "This BestBuyUnder500.com guide rounds up good watches for under $500 from trusted brands, with each pick verified under the price ceiling at publish time.",
-    "Whether you want nice watches under $500 for the office, great watches for under $500 with chronograph features, or top watches under $500 with Eco-Drive or automatic movements, we organized the list around what buyers actually compare: movement, water resistance, case size, band type, and long-term wear.",
-    "We cleaned the supplied product sheet, preserved each affiliate URL, and wrote concise pros and cons so you can compare best watches under 500 mens styles without wading through marketplace clutter."
+    "Whether you want nice watches under $500 for the office, great watches for under $500 with chronograph features, or top watches under $500 with Eco-Drive or automatic movements, we organized the list around what buyers actually compare: movement, water resistance, case size, band type, and long-term wear."
   ],
   filters: [
     "Best overall pick",
@@ -1039,7 +1037,7 @@ export const watchArticle: Article = {
     "Bulova Marine Star",
     "Citizen Corso"
   ],
-  comparisonColumns: ["Product", "Price", "Rating", "Best for", "Key specs", "Buy"],
+  comparisonColumns: ["Product", "Price", "Rating", "Best for", "Movement", "Case size", "Water resistance", "Band", "Buy"],
   products: watchProducts,
   buyingGuideHeading: "What to check before buying men's watches under $500",
   buyingGuide: [
@@ -1087,9 +1085,10 @@ export const watchArticle: Article = {
     }
   ],
   quickPicks: [
-    { label: "Best overall pick", productId: watchProducts[0]?.id || "", reason: "Citizen Corso Eco-Drive pairs solar convenience, dress versatility, and strong ratings near $260." },
+    { label: "Best pick", productId: "watch-3", reason: "Bulova Marine Star Chronograph — 4.7 rating, versatile sport styling, and strong value at $259." },
     { label: "Lowest strong-rated price", productId: watchProducts.find((p) => p.price < 250 && p.rating >= 4.6)?.id || watchProducts[1]?.id || "", reason: "Fossil Grant and Bulova sport picks offer top watches under 500 value without using the full budget." },
     { label: "Best automatic under $500", productId: watchProducts.find((p) => /automatic/i.test(p.title))?.id || watchProducts[2]?.id || "", reason: "Seiko, Bulova Sutton, and Stuhrling automatics deliver mechanical appeal below the ceiling." }
+  
   ],
   budgetTips: [
     "You do not need to spend $500 to get a strong daily watch; many top-rated picks land between $250 and $350.",
@@ -1098,7 +1097,7 @@ export const watchArticle: Article = {
     "Confirm whether the listing includes sizing tools or extra straps before comparing final value."
   ],
   relatedArticles: ["best-gaming-headsets-for-under-500", "best-gaming-laptop-under-500"],
-  featuredProductId: "watch-1",
+  featuredProductId: "watch-3",
   sortOptions: [
     { label: "Recommended", value: "recommended" },
     { label: "Price: low to high", value: "price-asc" },

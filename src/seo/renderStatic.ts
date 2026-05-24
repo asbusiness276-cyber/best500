@@ -5,6 +5,7 @@ import { author } from "../data/author";
 import { staticPages } from "../data/routes";
 import { HOVER_CTAS } from "../components/PriceCtaButton";
 import type { Article, Product } from "../types";
+import { comparisonSpecColumns, specValue } from "../utils/comparisonSpecs";
 import { articleJsonLd, buildMetaTags, escapeHtml, metaForArticle, metaForHome, metaForStaticPage, websiteJsonLd } from "./meta";
 
 function list(items: string[]): string {
@@ -35,6 +36,7 @@ export function renderHomeStatic(): string {
 }
 
 export function renderArticleStatic(article: Article): string {
+  const tableColumns = ["Product", "Price", "Rating", "Best for", ...comparisonSpecColumns(article).map((column) => column.heading)];
   return `<!doctype html><html lang="en"><head>${buildMetaTags(metaForArticle(article))}
   ${articleJsonLd(article).map((schema) => `<script type="application/ld+json">${JSON.stringify(schema)}</script>`).join("")}</head><body>
   <main id="seo-static" class="seo-crawler-only">
@@ -47,10 +49,11 @@ export function renderArticleStatic(article: Article): string {
       ${article.introParagraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}
       <h2>Quick picks</h2>${list(article.quickPicks.map((pick) => `${pick.label}: ${pick.reason}`))}
       <h2>Comparison table</h2>
-      <table><thead><tr>${article.comparisonColumns.map((column) => `<th>${escapeHtml(column)}</th>`).join("")}</tr></thead><tbody>
+      <table><thead><tr>${tableColumns.map((column) => `<th>${escapeHtml(column)}</th>`).join("")}</tr></thead><tbody>
       ${article.products.map((product, index) => {
         const cta = HOVER_CTAS[index % HOVER_CTAS.length];
-        return `<tr><td><img src="${product.image}" alt="${escapeHtml(product.title)}" /> ${escapeHtml(product.shortTitle)}</td><td><a href="${product.affiliateUrl}" rel="nofollow sponsored noopener noreferrer">${escapeHtml(String(product.price))} — ${escapeHtml(cta)}</a></td><td>${product.rating}/5</td><td>${escapeHtml(product.badge || product.highlightFeature || "Budget pick")}</td><td>${escapeHtml(product.specs.join("; "))}</td></tr>`;
+        const specCells = comparisonSpecColumns(article).map((column) => `<td>${escapeHtml(specValue(product, column.labels))}</td>`).join("");
+        return `<tr><td><img src="${product.image}" alt="${escapeHtml(product.title)}" /> ${escapeHtml(product.shortTitle)}</td><td><a href="${product.affiliateUrl}" rel="nofollow sponsored noopener noreferrer">${escapeHtml(String(product.price))} — ${escapeHtml(cta)}</a></td><td>${product.rating}/5</td><td>${escapeHtml(product.badge || product.highlightFeature || "Budget pick")}</td>${specCells}</tr>`;
       }).join("")}
       </tbody></table>
       <h2>Product reviews</h2>${article.products.map(productCard).join("")}

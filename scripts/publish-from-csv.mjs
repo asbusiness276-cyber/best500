@@ -30,6 +30,14 @@ import {
   patchArticlesRegistry,
   patchSiteRoutes
 } from "./lib/publish-utils.mjs";
+import { reorderFeaturedProduct, pickBestProduct } from "./lib/score-featured-product.mjs";
+import {
+  categoryFromSlug,
+  comparisonColumnsForCategory,
+  introParagraphsForCategory,
+  faqHowChosenAnswer,
+  metaTitleFromKeyword
+} from "./lib/category-templates.mjs";
 
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 
@@ -132,17 +140,12 @@ function productsFromCsv(csvPath, slug, { carousel, featuredAsin }) {
 
   if (featuredAsin) {
     const idx = products.findIndex((p) => p.asin === featuredAsin);
-    if (idx > 0) {
-      const [featured] = products.splice(idx, 1);
-      featured.badge = featured.badge || "Best pick";
-      products.unshift(featured);
-      products = products.map((p, i) => ({ ...p, id: `${prefix}-${i + 1}` }));
+    if (idx >= 0 && idx !== products.findIndex((p) => p.id === pickBestProduct(products).id)) {
+      console.warn(`Warning: --featured-asin ${featuredAsin} is not the scored best pick; using rating/features winner instead.`);
     }
   }
 
-  if (products[0] && !products[0].badge) products[0].badge = "Best pick";
-  const lowest = [...products].sort((a, b) => a.price - b.price)[0];
-  if (lowest && lowest.id !== products[0]?.id) lowest.badge = lowest.badge || "Lowest price";
+  products = reorderFeaturedProduct(products);
 
   return products;
 }
@@ -161,6 +164,10 @@ function renderArticleSource({
 }) {
   const { line1, line2 } = heroTitleLines(keyword);
   const navLabel = navLabelFrom(keyword);
+  const categoryKey = categoryFromSlug(slug, keyword);
+  const comparisonColumns = comparisonColumnsForCategory(categoryKey);
+  const introParagraphs = introParagraphsForCategory(categoryKey, keyword);
+  const howChosenAnswer = faqHowChosenAnswer(categoryKey);
   const now = new Date().toISOString();
   const featuredId = products[0]?.id || `${slug}-1`;
   const lowest = [...products].sort((a, b) => a.price - b.price)[0];
@@ -185,16 +192,13 @@ export const ${articleExport}: Article = {
   heroTitleLine1: "${line1.replace(/"/g, '\\"')}",
   heroTitleLine2: "${line2.replace(/"/g, '\\"')}",
   heroSubtitle:
-    "A practical comparison of picks that stay below the $500 ceiling with specs, ratings, and buyer notes from the supplied product sheet.",
+    "A practical comparison of picks that stay below the $500 ceiling with specs, ratings, and buyer notes to help you choose confidently.",
   heroTrustNote:
     "Always verify live Amazon pricing, compatibility, and current availability before buying.",
   introHeading: "How we picked ${keyword.replace(/"/g, '\\"').toLowerCase()}",
-  introParagraphs: [
-    "This BestBuyUnder500.com guide focuses on products that balance price, ratings, and useful features for shoppers staying under $500.",
-    "We cleaned the supplied CSV to remove warranty-plan and marketplace noise, then organized picks around what buyers actually compare in this category."
-  ],
+  introParagraphs: ${JSON.stringify(introParagraphs, null, 4).replace(/\n/g, "\n  ")},
   filters: ["Best pick", "Lowest price", "Top rated"],
-  comparisonColumns: ["Product", "Price", "Rating", "Best for", "Key specs"],
+  comparisonColumns: ${JSON.stringify(comparisonColumns)},
   products: ${productsExport},
   buyingGuideHeading: "What to check before buying",
   buyingGuide: [
@@ -218,11 +222,11 @@ export const ${articleExport}: Article = {
   faqs: [
     {
       question: "Can you find good options under $500?",
-      answer: "Yes. This guide highlights products that stayed at or below $500 in the supplied sheet, with notes on tradeoffs at this price point."
+      answer: "Yes. This guide highlights products that stayed at or below $500 when we last checked, with notes on tradeoffs at this price point."
     },
     {
       question: "How were these products chosen?",
-      answer: "We imported the CSV, removed warranty-plan noise, deduplicated listings, and ranked picks using price, rating, and useful spec bullets."
+      answer: "${howChosenAnswer.replace(/"/g, '\\"')}"
     },
     {
       question: "Do prices stay under $500?",
@@ -236,10 +240,10 @@ export const ${articleExport}: Article = {
   quickPicks: [
     { label: "Best pick", productId: "${featuredId}", reason: "Top overall balance of rating, price, and features in this sheet." },
     { label: "Lowest price", productId: "${lowest?.id || featuredId}", reason: "Best starting point when keeping the budget as low as possible." },
-    { label: "Top rated", productId: "${topRated?.id || featuredId}", reason: "Highest buyer rating among the cleaned comparison set." }
+    { label: "Top rated", productId: "${topRated?.id || featuredId}", reason: "Highest buyer rating among the picks in this guide." }
   ],
   budgetTips: [
-    "Ignore scraped protection-plan bullet text and compare real product specs instead.",
+    "Compare the category specs that matter most—not add-on warranty or protection-plan listings.",
     "Leave room in the budget for accessories, install parts, or safety gear.",
     "If two picks are close in price, choose the one with better ratings and clearer spec bullets.",
     "Recheck live Amazon pricing before checkout."
@@ -277,7 +281,7 @@ async function main() {
   const outFile = articleFilePath(root, args.slug);
   const webpName = featuredWebpName(args.slug);
   const heroImage = `/images/${webpName}`;
-  const metaTitle = args.keyword.includes("2026") ? args.keyword : `${args.keyword.replace(/\s+Under\s+\$500$/i, "")} Under $500 in 2026`;
+  const metaTitle = metaTitleFromKeyword(args.keyword);
   const metaDescription = `Compare ${args.keyword.toLowerCase()} picks with specs, pros, cons, quick picks, and buying tips.`;
 
   const products = productsFromCsv(csvPath, args.slug, {

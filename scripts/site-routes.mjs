@@ -2,6 +2,18 @@ export const SITE_URL = "https://bestbuyunder500.com";
 
 export const articleRoutes = [
   {
+    path: "/best-barbecue-grill-under-500/",
+    title: "Best Barbecue Grill Under $500 in 2026",
+    description: "Compare the best barbecue grill under $500—propane, dual-fuel, and charcoal picks with burners, cooking area, BTU, and build quality for patio and backyard BBQ.",
+    category: "Outdoor & Travel"
+  },
+  {
+    path: "/best-electric-wheelchair-under-500/",
+    title: "Best Electric Wheelchair Under $500 (2026)",
+    description: "Compare the best electric wheelchair under $500 with foldable, lightweight, and long-range picks—motor power, weight capacity, and travel notes.",
+    category: "Home & Living"
+  },
+  {
     path: "/best-gaming-laptop-under-500/",
     title: "Best Gaming Laptop Under $500 in 2026",
     description: "Compare the best gaming laptop under $500 picks with specs, pros, cons, quick picks, and buying tips.",

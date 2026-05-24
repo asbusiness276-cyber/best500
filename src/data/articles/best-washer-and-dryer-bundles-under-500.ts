@@ -32,7 +32,7 @@ export const washerDryerProducts: Product[] = [
       "Verify hose, vent, and electrical requirements before ordering"
     ],
     "highlightFeature": "Full-automatic",
-    "badge": "Best bundle pick",
+    "badge": "Best pick",
     "id": "washer-dryer-1"
   },
   {
@@ -498,7 +498,7 @@ export const washerDryerArticle: Article = {
   introHeading: "How we picked washer and dryer bundles under $500",
   introParagraphs: [
     "This BestBuyUnder500.com guide focuses on portable washer and dryer bundles that balance wash capacity, drying method, cycle options, drain convenience, and real price value for small homes.",
-    "We cleaned the supplied product sheet to remove warranty-plan noise, then organized picks around what buyers compare: separate washer/dryer sets vs combo drums, lb or cu.ft capacity, full-automatic vs twin-tub operation, and apartment or RV placement."
+    "We grouped portable laundry sets by washer capacity, dryer size, full-automatic vs twin-tub operation, and apartment-friendly drainage so small-space buyers can compare real laundry formats."
   ],
   filters: [
     "Best bundle pick",
@@ -514,7 +514,7 @@ export const washerDryerArticle: Article = {
     "Erivess sets",
     "Auertech bundles"
   ],
-  comparisonColumns: ["Product", "Price", "Rating", "Best for", "Key specs"],
+  comparisonColumns: ["Product", "Price", "Rating", "Best for", "Capacity", "Type", "Dryer", "Drain"],
   products: washerDryerProducts,
   buyingGuideHeading: "What to check before buying washer dryer bundles under $500",
   buyingGuide: [
@@ -562,12 +562,12 @@ export const washerDryerArticle: Article = {
     }
   ],
   quickPicks: [
-    { label: "Best bundle pick", productId: "washer-dryer-1", reason: "Strong rating and separate washer plus dryer set at a practical price under the $500 cap." },
-    { label: "Lowest price", productId: "washer-dryer-13", reason: "Best starting point when keeping the laundry budget as low as possible." },
-    { label: "Top rated", productId: "washer-dryer-1", reason: "Highest buyer rating in the cleaned comparison sheet." }
+    { label: "Best pick", productId: "washer-dryer-1", reason: "Erivess 16 lb washer and dryer set — 4.4 rating, separate units, and practical capacity at $290." },
+    { label: "Lowest price", productId: "washer-dryer-13", reason: "Lowest upfront price among compact washer/dryer picks in this guide." },
+    { label: "Top rated", productId: "washer-dryer-1", reason: "Highest buyer rating (4.4) among picks in this guide." }
   ],
   budgetTips: [
-    "Ignore scraped protection-plan bullet text and compare wash capacity, dryer size, and drain setup instead.",
+    "Compare wash capacity, dryer size, and drain setup—not add-on warranty listings.",
     "Budget for hoses, adapters, and possible vent kits even when the machines are under $500.",
     "Twin-tub models cost less but need more hands-on laundry steps than full-automatic sets.",
     "If two bundles are close in price, choose the one with a separate dryer and stainless tub."

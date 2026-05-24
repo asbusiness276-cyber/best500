@@ -2,6 +2,39 @@ import type { Article, Product } from "../../types";
 
 export const goKartProducts: Product[] = [
   {
+    "id": "go-kart-4",
+    "title": "24V Electric Go Kart, Kids Drift Kart with Dual 85W Motors, 11.2 MPH & 60+ Min Ride Time, Adjustable Seat & 5-Point Seat Belt for Ages 6-12, 150 LBS Max Load (White)",
+    "shortTitle": "SkyNexus 24V Kids Drift Kart",
+    "image": "https://m.media-amazon.com/images/I/61XUqkVNC4L._AC_SL1500_.jpg",
+    "price": 360,
+    "rating": 5,
+    "affiliateUrl": "https://www.amazon.com/dp/B0GSQPWPHC/?tag=visitbest07-20",
+    "asin": "B0GSQPWPHC",
+    "specs": [
+      "Power: 24V dual 85W motors",
+      "Speed: Up to 11.2 MPH",
+      "Runtime: 60+ minutes",
+      "Safety: 5-point seat belt",
+      "Load: 150 lbs max"
+    ],
+    "features": [
+      "Power: 24V dual 85W motors",
+      "Speed: Up to 11.2 MPH",
+      "Runtime: 60+ minutes",
+      "Safety: 5-point seat belt",
+      "Load: 150 lbs max"
+    ],
+    "pros": [
+      "Safety-focused braking or belt features are called out in the listing",
+      "Strong buyer rating compared with other picks in this guide"
+    ],
+    "cons": [
+      "Battery runtime and charge time matter more than top speed on paper"
+    ],
+    "highlightFeature": "11.2 MPH",
+    "badge": "Best pick"
+  },
+  {
     "id": "go-kart-1",
     "title": "Wanan Electric Go Kart with Adjustable Seat, Licensed BMW Drift Kart with Dual Motors, Crazy Go Cart for Kids Ages 6-12, LED Lights, Drift Mode and 2 Speed (Red-36V)",
     "shortTitle": "Wanan BMW Licensed Electric Drift Kart",
@@ -100,39 +133,6 @@ export const goKartProducts: Product[] = [
     ],
     "highlightFeature": "50cc gas engine",
     "badge": "Gas powered pick"
-  },
-  {
-    "id": "go-kart-4",
-    "title": "24V Electric Go Kart, Kids Drift Kart with Dual 85W Motors, 11.2 MPH & 60+ Min Ride Time, Adjustable Seat & 5-Point Seat Belt for Ages 6-12, 150 LBS Max Load (White)",
-    "shortTitle": "SkyNexus 24V Kids Drift Kart",
-    "image": "https://m.media-amazon.com/images/I/61XUqkVNC4L._AC_SL1500_.jpg",
-    "price": 360,
-    "rating": 5,
-    "affiliateUrl": "https://www.amazon.com/dp/B0GSQPWPHC/?tag=visitbest07-20",
-    "asin": "B0GSQPWPHC",
-    "specs": [
-      "Power: 24V dual 85W motors",
-      "Speed: Up to 11.2 MPH",
-      "Runtime: 60+ minutes",
-      "Safety: 5-point seat belt",
-      "Load: 150 lbs max"
-    ],
-    "features": [
-      "Power: 24V dual 85W motors",
-      "Speed: Up to 11.2 MPH",
-      "Runtime: 60+ minutes",
-      "Safety: 5-point seat belt",
-      "Load: 150 lbs max"
-    ],
-    "pros": [
-      "Safety-focused braking or belt features are called out in the listing",
-      "Strong buyer rating compared with other picks in this guide"
-    ],
-    "cons": [
-      "Battery runtime and charge time matter more than top speed on paper"
-    ],
-    "highlightFeature": "11.2 MPH",
-    "badge": "Top rated"
   },
   {
     "id": "go-kart-5",
@@ -549,7 +549,7 @@ export const goKartArticle: Article = {
     "Always confirm live Amazon pricing, age limits, local laws, and safety gear before buying any go-kart or ATV.",
   introHeading: "How we picked go karts and ride-ons under $500",
   introParagraphs: [
-    "This BestBuyUnder500.com guide covers gas go karts under $500 alongside close alternatives: electric drift karts, 50cc gas four-wheelers, and a few honest accessory listings so you can compare real product types instead of warranty-plan noise from the source sheet.",
+    "This BestBuyUnder500.com guide covers gas go karts under $500 alongside close alternatives: electric drift karts, 50cc gas four-wheelers, and a few honest accessory listings so you can compare real product types.",
     "True two-seater gas go karts under $500 are rare at retail, so we highlight single-rider gas ATVs and electric karts where they deliver the most value, and we call out when a listing is a part or dirt bike rather than a kart frame."
   ],
   filters: [
@@ -566,7 +566,7 @@ export const goKartArticle: Article = {
     "FRP GA40",
     "Razor Ground Force"
   ],
-  comparisonColumns: ["Product", "Price", "Rating", "Best for", "Key specs"],
+  comparisonColumns: ["Product", "Price", "Rating", "Best for", "Engine", "Speed", "Rider age", "Fuel type"],
   products: goKartProducts,
   buyingGuideHeading: "What to check before buying gas go karts under $500",
   buyingGuide: [
@@ -614,18 +614,19 @@ export const goKartArticle: Article = {
     }
   ],
   quickPicks: [
-    { label: "Best gas pick", productId: "go-kart-7", reason: "40cc 4-stroke gas ATV with disc brakes, speed control, and the strongest gas-focused feature set in the sheet." },
+    { label: "Best pick", productId: "go-kart-4", reason: "Best pick: 5 rating, $360, 2 strong pros (score 618)." },
     { label: "Lowest price kart", productId: "go-kart-9", reason: "Useful entry point when you want a ride-on kart frame without spending close to $500." },
     { label: "Top rated electric", productId: "go-kart-4", reason: "High buyer rating with practical speed, runtime, and safety-belt notes for ages 6-12." }
+  
   ],
   budgetTips: [
-    "Ignore scraped protection-plan bullet text and compare motor size, brakes, and weight limits instead.",
+    "Compare motor size, brakes, and weight limits—not add-on warranty listings.",
     "If you need off-road ability, prioritize suspension, tire size, and disc brakes over top speed claims.",
     "For driveway use, electric drift karts can be easier to manage than small gas engines.",
     "Leave room in the budget for a helmet and pads even when the kart itself is under $500."
   ],
   relatedArticles: [],
-  featuredProductId: "go-kart-7",
+  featuredProductId: "go-kart-4",
   sortOptions: [
     { label: "Top rated", value: "rating-desc" },
     { label: "Price: Low to High", value: "price-asc" },

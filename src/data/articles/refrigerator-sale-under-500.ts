@@ -2,6 +2,41 @@ import type { Article, Product } from "../../types";
 
 export const refrigeratorProducts: Product[] = [
   {
+    "id": "refrigerator-5",
+    "title": "HAILANG 7.0 Cu.Ft Refrigerator with Freezer, 2 Door Apartment Size Fridge with Top Freezer, Large Capacity, Refrigerator for Apartment, Kitchen",
+    "shortTitle": "HAILANG 7.0 Cu.Ft Compact Refrigerator",
+    "image": "https://m.media-amazon.com/images/I/61UMCY6oEfL._AC_SL1500_.jpg",
+    "price": 349,
+    "rating": 5,
+    "affiliateUrl": "https://amzn.to/4tNVYvy",
+    "asin": "B0FZHWSFW2",
+    "specs": [
+      "Capacity: 7.0 Cu.Ft",
+      "Freezer: Top Freezer",
+      "Temperature: Adjustable thermostat",
+      "Storage: Adjustable shelves / crisper",
+      "Size: 21.7inch*21.06inch*48.5inch",
+      "Efficiency: Energy-focused"
+    ],
+    "features": [
+      "Capacity: 7.0 Cu.Ft",
+      "Freezer: Top Freezer",
+      "Temperature: Adjustable thermostat",
+      "Storage: Adjustable shelves / crisper",
+      "Size: 21.7inch*21.06inch*48.5inch"
+    ],
+    "pros": [
+      "More storage capacity than many compact fridges under $500",
+      "Quiet operation is useful for apartments, dorms, and offices",
+      "Energy-focused design can help with everyday running costs"
+    ],
+    "cons": [
+      "May need more freezer maintenance than frost-free models"
+    ],
+    "highlightFeature": "7.0 Cu.Ft",
+    "badge": "Best pick"
+  },
+  {
     "id": "refrigerator-1",
     "title": "BLACK+DECKER 7.7 Cu. Ft. Top Mount Refrigerator with Freezer, 2 Door Fridge with Top Freezer and Mechanical Temperature Control, For Homes and Apartments, BDA77LAB, Black",
     "shortTitle": "BLACK+DECKER 7.7 Cu. Ft Compact Refrigerator",
@@ -130,40 +165,6 @@ export const refrigeratorProducts: Product[] = [
       "Verify garage placement requirements before buying"
     ],
     "highlightFeature": "7.4 Cu.Ft"
-  },
-  {
-    "id": "refrigerator-5",
-    "title": "HAILANG 7.0 Cu.Ft Refrigerator with Freezer, 2 Door Apartment Size Fridge with Top Freezer, Large Capacity, Refrigerator for Apartment, Kitchen",
-    "shortTitle": "HAILANG 7.0 Cu.Ft Compact Refrigerator",
-    "image": "https://m.media-amazon.com/images/I/61UMCY6oEfL._AC_SL1500_.jpg",
-    "price": 349,
-    "rating": 5,
-    "affiliateUrl": "https://amzn.to/4tNVYvy",
-    "asin": "B0FZHWSFW2",
-    "specs": [
-      "Capacity: 7.0 Cu.Ft",
-      "Freezer: Top Freezer",
-      "Temperature: Adjustable thermostat",
-      "Storage: Adjustable shelves / crisper",
-      "Size: 21.7inch*21.06inch*48.5inch",
-      "Efficiency: Energy-focused"
-    ],
-    "features": [
-      "Capacity: 7.0 Cu.Ft",
-      "Freezer: Top Freezer",
-      "Temperature: Adjustable thermostat",
-      "Storage: Adjustable shelves / crisper",
-      "Size: 21.7inch*21.06inch*48.5inch"
-    ],
-    "pros": [
-      "More storage capacity than many compact fridges under $500",
-      "Quiet operation is useful for apartments, dorms, and offices",
-      "Energy-focused design can help with everyday running costs"
-    ],
-    "cons": [
-      "May need more freezer maintenance than frost-free models"
-    ],
-    "highlightFeature": "7.0 Cu.Ft"
   },
   {
     "id": "refrigerator-6",
@@ -574,7 +575,7 @@ export const refrigeratorArticle: Article = {
   introHeading: "How we picked refrigerators under $500",
   introParagraphs: [
     "This BestBuyUnder500.com guide focuses on compact and apartment-size refrigerators that balance storage capacity, freezer layout, shelf flexibility, quiet operation, and real price value.",
-    "We cleaned the supplied product sheet to remove warranty-plan and marketplace noise, then rewrote the notes around the details buyers actually compare: capacity, freezer position, thermostat control, shelves, reversible doors, and everyday placement."
+    "We compared compact refrigerators on total capacity, freezer layout, shelf flexibility, footprint, and quiet operation for apartments, dorms, and offices."
   ],
   filters: [
     "Lowest price",
@@ -590,7 +591,7 @@ export const refrigeratorArticle: Article = {
     "BLACK+DECKER 7.7",
     "Upstreman picks"
   ],
-  comparisonColumns: ["Product", "Price", "Rating", "Best for", "Key specs"],
+  comparisonColumns: ["Product", "Price", "Rating", "Best for", "Capacity", "Freezer", "Size", "Door"],
   products: refrigeratorProducts,
   buyingGuideHeading: "What to check before buying a refrigerator under $500",
   buyingGuide: [
@@ -638,9 +639,11 @@ export const refrigeratorArticle: Article = {
     }
   ],
   quickPicks: [
-    { label: "Lowest listed price", productId: refrigeratorProducts[0]?.id || "", reason: "Best starting point if keeping the appliance budget low matters most." },
+    { label: "Best pick", productId: "refrigerator-5", reason: "Best pick: 5 rating, $349, 3 strong pros (score 626)." },
+    { label: "Lowest price", productId: "refrigerator-1", reason: "Lowest upfront price at $269 among picks under the cap." },
     { label: "Best apartment value", productId: refrigeratorProducts.find((product) => product.shortTitle.includes("Upstreman") || product.shortTitle.includes("EUHOMY"))?.id || refrigeratorProducts[1]?.id || "", reason: "Good capacity and flexible storage for apartment or office use." },
     { label: "Best large capacity", productId: refrigeratorProducts.find((product) => product.shortTitle.includes("9.2") || product.shortTitle.includes("8.5"))?.id || refrigeratorProducts[2]?.id || "", reason: "More usable space while staying below the $500 ceiling." }
+  
   ],
   budgetTips: [
     "Check whether delivery or haul-away fees change the real final price.",
@@ -649,7 +652,7 @@ export const refrigeratorArticle: Article = {
     "If two models are close in price, choose the one with better shelves, crisper storage, and reversible door placement."
   ],
   relatedArticles: [],
-  featuredProductId: refrigeratorProducts.find((product) => product.shortTitle.includes("Upstreman") || product.shortTitle.includes("EUHOMY"))?.id || refrigeratorProducts[1]?.id,
+  featuredProductId: "refrigerator-5",
   sortOptions: [
     { label: "Top rated", value: "rating-desc" },
     { label: "Price: Low to High", value: "price-asc" },

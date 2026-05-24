@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { CheckCircle2, Cpu, ExternalLink, HardDrive, Headphones, MemoryStick, Monitor, Ruler, ShieldCheck, Snowflake, Star, Thermometer, Volume2, Wifi } from "lucide-react";
+import { CheckCircle2, ExternalLink, ShieldCheck, Star } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { affiliateDisclosure } from "../constants/affiliate";
 import { author } from "../data/author";
@@ -9,6 +9,7 @@ import { ArticleDiscoveryPanel } from "../components/ArticleDiscoveryPanel";
 import { ProductImageGallery } from "../components/ProductImageGallery";
 import { PriceCtaButton } from "../components/PriceCtaButton";
 import { productPrimaryImage } from "../utils/productImages";
+import { comparisonSpecColumns, specValue } from "../utils/comparisonSpecs";
 import { sortProducts, type ProductSort } from "../utils/sortProducts";
 
 function productById(article: Article, id: string): Product | undefined {
@@ -77,37 +78,6 @@ function productForShortcut(article: Article, label: string, index: number): Pro
   return fallback;
 }
 
-function specValue(product: Product, labels: string[]): string {
-  const spec = product.specs.find((item) => labels.some((label) => item.toLowerCase().startsWith(label.toLowerCase())));
-  return spec ? spec.replace(/^[^:]+:\s*/, "") : "Check listing";
-}
-
-function comparisonSpecs(article: Article): Array<{ heading: string; labels: string[]; icon: LucideIcon }> {
-  if (article.keyword.toLowerCase().includes("headset")) {
-    return [
-      { heading: "Connection", labels: ["Connection"], icon: Wifi },
-      { heading: "Audio", labels: ["Audio", "Sound"], icon: Volume2 },
-      { heading: "Noise / Mic", labels: ["Noise control", "Mic"], icon: Headphones }
-    ];
-  }
-
-  if (article.keyword.toLowerCase().includes("refrigerator")) {
-    return [
-      { heading: "Capacity", labels: ["Capacity"], icon: Ruler },
-      { heading: "Freezer", labels: ["Freezer"], icon: Snowflake },
-      { heading: "Temperature", labels: ["Temperature"], icon: Thermometer },
-      { heading: "Storage", labels: ["Storage"], icon: HardDrive }
-    ];
-  }
-
-  return [
-    { heading: "Processor", labels: ["Processor"], icon: Cpu },
-    { heading: "Memory", labels: ["Memory"], icon: MemoryStick },
-    { heading: "Storage", labels: ["Storage"], icon: HardDrive },
-    { heading: "Display", labels: ["Display"], icon: Monitor }
-  ];
-}
-
 function SpecCell({ icon: Icon, value }: { icon: LucideIcon; value: string }) {
   return (
     <span className="inline-flex min-w-[130px] items-center gap-2 rounded-xl bg-slate-50 px-3 py-2 text-sm font-semibold text-slate-700 ring-1 ring-slate-200">
@@ -137,7 +107,7 @@ export function ArticlePage({ article }: { article: Article }) {
     product: productForShortcut(article, filter, index)
   }));
   const sortedProducts = useMemo(() => sortProducts(article.products, article, sort), [article, sort]);
-  const specColumns = comparisonSpecs(article);
+  const specColumns = comparisonSpecColumns(article);
   const featuredId = article.featuredProductId || article.quickPicks.find((pick) => !/lowest/i.test(pick.label))?.productId;
 
   return (

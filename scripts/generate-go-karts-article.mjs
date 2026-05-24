@@ -339,7 +339,7 @@ export const goKartArticle: Article = {
     "FRP GA40",
     "Razor Ground Force"
   ],
-  comparisonColumns: ["Product", "Price", "Rating", "Best for", "Key specs"],
+  comparisonColumns: ["Product", "Price", "Rating", "Best for", "Engine", "Speed", "Rider age", "Fuel type"],
   products: goKartProducts,
   buyingGuideHeading: "What to check before buying gas go karts under $500",
   buyingGuide: [
