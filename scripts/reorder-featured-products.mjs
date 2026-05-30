@@ -29,7 +29,8 @@ const articleFiles = [
   { file: "best-washer-and-dryer-bundles-under-500.ts", productsExport: "washerDryerProducts", articleExport: "washerDryerArticle" },
   { file: "electric-dirt-bike-under-500.ts", productsExport: "electricDirtBikeProducts", articleExport: "electricDirtBikeArticle" },
   { file: "best-electric-wheelchair-under-500.ts", productsExport: "bestElectricWheelchairUnder500Products", articleExport: "bestElectricWheelchairUnder500Article" },
-  { file: "best-barbecue-grill-under-500.ts", productsExport: "bestBarbecueGrillUnder500Products", articleExport: "bestBarbecueGrillUnder500Article" }
+  { file: "best-barbecue-grill-under-500.ts", productsExport: "bestBarbecueGrillUnder500Products", articleExport: "bestBarbecueGrillUnder500Article" },
+  { file: "best-30-mph-electric-scooter-under-500.ts", productsExport: "best30MphElectricScooterUnder500Products", articleExport: "best30MphElectricScooterUnder500Article" }
 ];
 
 function bestPickReason(product) {

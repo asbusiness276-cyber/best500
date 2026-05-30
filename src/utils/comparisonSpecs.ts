@@ -122,6 +122,16 @@ export function comparisonSpecColumns(article: Article): ComparisonSpecColumn[] 
     ];
   }
 
+  if (slug.includes("electric-scooter") || slug.includes("scooter") || keyword.includes("scooter")) {
+    return [
+      { heading: "Motor", labels: ["Motor"], icon: Zap },
+      { heading: "Top speed", labels: ["Top speed", "Speed"], icon: Gauge },
+      { heading: "Range", labels: ["Range"], icon: Battery },
+      { heading: "Tires", labels: ["Tires"], icon: Ruler },
+      { heading: "Brakes", labels: ["Brakes"], icon: Thermometer }
+    ];
+  }
+
   return [
     { heading: "Processor", labels: ["Processor"], icon: Cpu },
     { heading: "Memory", labels: ["Memory"], icon: MemoryStick },

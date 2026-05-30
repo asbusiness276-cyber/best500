@@ -9,8 +9,9 @@ import { washerDryerArticle } from "./articles/best-washer-and-dryer-bundles-und
 import { electricDirtBikeArticle } from "./articles/electric-dirt-bike-under-500";
 import { bestElectricWheelchairUnder500Article } from "./articles/best-electric-wheelchair-under-500";
 import { bestBarbecueGrillUnder500Article } from "./articles/best-barbecue-grill-under-500";
+import { best30MphElectricScooterUnder500Article } from "./articles/best-30-mph-electric-scooter-under-500";
 
-export const articles: Article[] = [laptopArticle, headsetArticle, refrigeratorArticle, washerDryerArticle, hamRadioArticle, watchArticle, goKartArticle, electricDirtBikeArticle, bestElectricWheelchairUnder500Article, bestBarbecueGrillUnder500Article];
+export const articles: Article[] = [laptopArticle, headsetArticle, refrigeratorArticle, washerDryerArticle, hamRadioArticle, watchArticle, goKartArticle, electricDirtBikeArticle, bestElectricWheelchairUnder500Article, bestBarbecueGrillUnder500Article, best30MphElectricScooterUnder500Article];
 
 export function getArticleBySlug(slug: string): Article | undefined {
   return articles.find((article) => article.slug === slug);

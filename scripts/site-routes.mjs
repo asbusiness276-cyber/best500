@@ -2,6 +2,12 @@ export const SITE_URL = "https://bestbuyunder500.com";
 
 export const articleRoutes = [
   {
+    path: "/best-30-mph-electric-scooter-under-500/",
+    title: "Best 30 MPH Electric Scooter Under $500 in 2026",
+    description: "Compare the best 30 MPH electric scooter under $500—500W+ motors, 25–31 MPH top speed, dual suspension, and dual braking for adult commuting.",
+    category: "Outdoor & Travel"
+  },
+  {
     path: "/best-barbecue-grill-under-500/",
     title: "Best Barbecue Grill Under $500 in 2026",
     description: "Compare the best barbecue grill under $500—propane, dual-fuel, and charcoal picks with burners, cooking area, BTU, and build quality for patio and backyard BBQ.",
